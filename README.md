@@ -1,6 +1,7 @@
 la base de datos la llame "biblioteca" y le cree las siguiente tablas:
 
 //tabla usuarios
+
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50) NOT NULL,
