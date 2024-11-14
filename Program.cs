@@ -386,7 +386,11 @@ namespace BibliotecaApp
             Console.Write("Ingrese el autor: ");
             string autor = Console.ReadLine();
             Console.Write("Ingrese la fecha de lanzamiento (aaaa-mm-dd): ");
-
+            if (!DateTime.TryParse(Console.ReadLine(), out DateTime fechaLanzamiento))
+            {
+                Console.WriteLine("Fecha de lanzamiento no válida.");
+                return;
+            }
             string fechaLanzamiento = Console.ReadLine();
             Console.Write("Ingrese el ID del género: ");
             ListarGeneros(connection);
