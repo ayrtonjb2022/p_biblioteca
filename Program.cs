@@ -129,8 +129,8 @@ namespace BibliotecaApp
                     dni VARCHAR(20) UNIQUE,
                     telefono VARCHAR(15),
                     email VARCHAR(100),
-                    creado_el DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    actualizado_el DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    creado_el TIMESTAMP DEFAULT NOW(),
+                    actualizado_el TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP,
                     estado TINYINT(1) DEFAULT 1
                 )",
                 @"
@@ -140,8 +140,8 @@ namespace BibliotecaApp
                     autor VARCHAR(100),
                     fecha_lanzamiento DATE,
                     id_genero INT,
-                    creado_el DATETIME DEFAULT CURRENT_TIMESTAMP,
-                    actualizado_el DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                    creado_el TIMESTAMP DEFAULT NOW(),
+                    actualizado_el TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP,
                     estado TINYINT(1) DEFAULT 1
                 )",
                 @"
@@ -386,6 +386,7 @@ namespace BibliotecaApp
             Console.Write("Ingrese el autor: ");
             string autor = Console.ReadLine();
             Console.Write("Ingrese la fecha de lanzamiento (aaaa-mm-dd): ");
+
             string fechaLanzamiento = Console.ReadLine();
             Console.Write("Ingrese el ID del género: ");
             ListarGeneros(connection);
